@@ -3,16 +3,67 @@
 
 <head>
     <title>Nova AI</title>
-</head>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            displaying: grid;
+            place-item:center;
+            background: #09090b;
+            color:white;
+            front-family:arial;
+        }
 
+        .card{
+            width: 300px;
+            padding: 350px;
+            text - aling:center;
+            background: #151518;
+            border: 1px solid #333;
+            border-radius:25px;
+        }
+
+        .mic{
+            width: 90px;
+            height: 90px;
+            border: 0px;
+            border-radius: 50;
+            font-size: 35pc;
+            cursor:pointer;
+        }
+
+        .status{
+            margin-top:25px;
+            color:#aaa;
+        }
+
+        .song{
+            margin-top:10px;
+            font-size:13px;
+        }
+
+        .listening{
+            transform:scale(1.1);
+            box-shadow:0 0 0 10px #ffffff18;
+        }
+        </style>    
+</head>
 <body>
 
-    <h1>🤖 Nova AI</h1>
+<div class="class">
+    
+    <h2>Ameo AI</h2>
 
-    <h2>✅ Backend Connected Successfully</h2>
+    <p> Say Song Name </p>
 
-    <p>Flask server is running.</p>
+    <button id = "mic" class="mic">
+    </button>
 
+    <div id = "status" class="status">
+        Tap microphone
+    </div>
+
+    <div id="song" class"song"></div>
 </body>
 
 </html>
