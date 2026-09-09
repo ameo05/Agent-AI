@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 
-from app.youtube.play import create_youtube_url
+from App.youtube.play import create_youtube_url
 
 
 youtube_bp = Blueprint(
