@@ -24,3 +24,13 @@ def extract_email(text):
      return f"{match.group(1)}@{match.group(2)}.{match.group(3)}"
 
   return ""
+
+  def create_gmail_url(subject="", body="", recipient=""): 
+     params = urllib.parse.urlencode({
+           "view": "cm",
+           "fr": "1",
+           "to": recipient,
+           "su": subject,
+           "body": body
+     }) 
+  return f"https://mail.google.com/mail/u/0/?{params}"
