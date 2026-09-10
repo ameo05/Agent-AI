@@ -35,7 +35,7 @@ def create_app():
         })
 
     @app.route("/agent", methods=["POST"])
-    def agent();
+    def agent():
 
        try:
            data = request.get_json(silent=True) or {}
