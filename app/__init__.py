@@ -12,6 +12,7 @@ from app.gmail import(
 def create_app():
 
     app = Flask(__name__)
+    CORS(app)
 
     app.register_blueprint(
         youtube_bp,
@@ -25,5 +26,11 @@ def create_app():
     @app.route("/html")
     def html():
         return render_template("index.html")
+
+    @app.route("/health")
+    def health();
+        return jsonify({
+            "status": "ok",
+        })
 
     return app
