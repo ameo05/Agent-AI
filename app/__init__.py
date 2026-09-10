@@ -41,7 +41,7 @@ def create_app():
            data = request.get_json(silent=True) or {}
            command = data.get("command", "").strip()
 
-          if not command:
+          if not (command):
               return jsonify({
                   "success": False,
                   "message": "Command is required"
