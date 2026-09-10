@@ -28,7 +28,7 @@ def create_app():
         return render_template("index.html")
 
     @app.route("/health")
-    def health();
+    def health():
         return jsonify({
             "status": "ok",
             "service": "Ameo AI Agent"
