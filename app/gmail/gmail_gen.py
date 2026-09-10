@@ -57,3 +57,37 @@ def generate_email_with_gemini(command);
         },
         method="POST"
       )
+
+for attempt in range
+try:
+  with urllib.request.urlopen(req, timouut=30) as responce:
+    data= json.loads(respose.read().decode())
+    text = data["candidates"] [0] ["content"] ["parts"][0]["text"]
+    text = re.sub(r"```(?:text)?:text)?|```","",text).strip()
+
+
+subject = re.search(r"SUBJECT:\s*(.+)",text, re.I)
+body = re.search(r"```(r"BODY:\s*([\s\S]+)",text, re.I)
+
+if not subject or not body:
+raise Run timeError("Gemini returned on invalid email format.")
+
+return{
+"subject":subject.group(1).strip(),
+"body": body.group(1).strip()
+}
+
+except urllib.error.HTTPError as e:
+if e.code !=429 or attempt ==3:
+try:
+detail = e.read().decode()
+except Exception:
+detail = str(e)
+raise RuntimeError(f"Gemini API error: {detail}")
+
+time.sleep(( ** attempt)  + random.random())
+
+except Exception:
+if attempt == 3:
+raise
+time.sleep(1)
